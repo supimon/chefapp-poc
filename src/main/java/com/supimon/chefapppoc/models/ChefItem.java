@@ -2,32 +2,32 @@ package com.supimon.chefapppoc.models;
 
 public class ChefItem {
 
+    private String chefId;
     private String name;
-    private String desc;
     private String imgUrl;
-    private String[] skills;
-    private String[] specialSkills;
+    private String skills;
     private int recommendations;
     private double rating;
-    private String motherTongue;
     private boolean verified;
-    private int expectedSalary;
-    private int currentSalary;
+    private int experience;
 
-    public ChefItem(String name, String desc, String imgUrl, String[] skills, String[] specialSkills,
-                    int recommendations, double rating, String motherTongue, boolean verified,
-                    int expectedSalary, int currentSalary) {
+    public ChefItem(String chefId, String name, String imgUrl, String skills, int recommendations, double rating, boolean verified, int experience) {
+        this.chefId = chefId;
         this.name = name;
-        this.desc = desc;
         this.imgUrl = imgUrl;
         this.skills = skills;
-        this.specialSkills = specialSkills;
         this.recommendations = recommendations;
         this.rating = rating;
-        this.motherTongue = motherTongue;
         this.verified = verified;
-        this.expectedSalary = expectedSalary;
-        this.currentSalary = currentSalary;
+        this.experience = experience;
+    }
+
+    public String getChefId() {
+        return chefId;
+    }
+
+    public void setChefId(String chefId) {
+        this.chefId = chefId;
     }
 
     public String getName() {
@@ -38,14 +38,6 @@ public class ChefItem {
         this.name = name;
     }
 
-    public String getDesc() {
-        return desc;
-    }
-
-    public void setDesc(String desc) {
-        this.desc = desc;
-    }
-
     public String getImgUrl() {
         return imgUrl;
     }
@@ -54,20 +46,12 @@ public class ChefItem {
         this.imgUrl = imgUrl;
     }
 
-    public String[] getSkills() {
+    public String getSkills() {
         return skills;
     }
 
-    public void setSkills(String[] skills) {
+    public void setSkills(String skills) {
         this.skills = skills;
-    }
-
-    public String[] getSpecialSkills() {
-        return specialSkills;
-    }
-
-    public void setSpecialSkills(String[] specialSkills) {
-        this.specialSkills = specialSkills;
     }
 
     public int getRecommendations() {
@@ -86,14 +70,6 @@ public class ChefItem {
         this.rating = rating;
     }
 
-    public String getMotherTongue() {
-        return motherTongue;
-    }
-
-    public void setMotherTongue(String motherTongue) {
-        this.motherTongue = motherTongue;
-    }
-
     public boolean isVerified() {
         return verified;
     }
@@ -102,19 +78,11 @@ public class ChefItem {
         this.verified = verified;
     }
 
-    public int getExpectedSalary() {
-        return expectedSalary;
+    public int getExperience() {
+        return experience;
     }
 
-    public void setExpectedSalary(int expectedSalary) {
-        this.expectedSalary = expectedSalary;
-    }
-
-    public int getCurrentSalary() {
-        return currentSalary;
-    }
-
-    public void setCurrentSalary(int currentSalary) {
-        this.currentSalary = currentSalary;
+    public void setExperience(int experience) {
+        this.experience = experience;
     }
 }

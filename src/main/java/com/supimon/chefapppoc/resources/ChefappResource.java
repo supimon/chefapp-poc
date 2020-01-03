@@ -1,6 +1,6 @@
 package com.supimon.chefapppoc.resources;
 
-import com.supimon.chefapppoc.models.ChefItem;
+import com.supimon.chefapppoc.models.ChefFullItem;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,19 +12,26 @@ import java.util.List;
 @RequestMapping("/chefs")
 public class ChefappResource {
 
-    @RequestMapping("/{filterKeyword}")
-    public List<ChefItem> getChefs(@PathVariable("filterKeyword") String filterKeyword){
+    @RequestMapping("/filterBy/" +
+            "{filterKeyword}")
+    public List<ChefFullItem> getChefs(@PathVariable("filterKeyword") String filterKeyword){
         return Collections.singletonList(
-                new ChefItem(
-                        "Bhajan Kumar",
-                        "good chinese cook",
+                new ChefFullItem(
+                        "1234",
+                        "Bhajan Singh",
                         "https://upload.wikimedia.org/wikipedia/commons/4/48/Outdoors-man-portrait_%28cropped%29.jpg",
-                        new String[]{"chinese", "continental", "north-indian"},
-                        new String[]{"chinese"},
+                        "chinese, indian, american",
                         10,
                         4.5,
-                        "hindi",
-                        true, 20000, 15000)
+                        true,
+                        12,
+                        "1234567890",
+                        "chinese",
+                        "I am an excellent chef",
+                        20000,
+                        "Asamese",
+                        "bhajan@bhajan.com",
+                        20)
         );
     }
 }
