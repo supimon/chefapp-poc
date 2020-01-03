@@ -1,5 +1,6 @@
 package com.supimon.chefapppoc.resources;
 
+import com.supimon.chefapppoc.models.ChefDetailsItem;
 import com.supimon.chefapppoc.models.ChefListWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,10 +19,18 @@ public class ChefappResource {
             "{filterKeyword}")
     public ChefListWrapper getChefs(@PathVariable("filterKeyword") String filterKeyword){
 
-        // TODO: get all chefs
         ChefListWrapper chefListWrapper = restTemplate
                 .getForObject("http://localhost:8085/chef-listing/" + filterKeyword, ChefListWrapper.class);
 
         return chefListWrapper;
+    }
+
+    @RequestMapping("{chefId}")
+    public ChefDetailsItem getChefDetails(@PathVariable("chefId") String chefId){
+
+        ChefDetailsItem chefDetailsItem = restTemplate
+                .getForObject("http://localhost:8084/chefDetails/" + chefId, ChefDetailsItem.class);
+
+        return chefDetailsItem;
     }
 }

@@ -10,6 +10,9 @@ public class ChefDetailsItem {
     private String emailId;
     private int noticePeriod;
 
+    public ChefDetailsItem() {
+    }
+
     public ChefDetailsItem(String phoneNumber, String speciality, String desc, int expectedSalary, String motherTongue, String emailId, int noticePeriod) {
         this.phoneNumber = phoneNumber;
         this.speciality = speciality;
