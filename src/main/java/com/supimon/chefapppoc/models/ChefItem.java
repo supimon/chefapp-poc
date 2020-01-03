@@ -11,6 +11,9 @@ public class ChefItem {
     private boolean verified;
     private int experience;
 
+    public ChefItem() {
+    }
+
     public ChefItem(String chefId, String name, String imgUrl, String skills, int recommendations, double rating, boolean verified, int experience) {
         this.chefId = chefId;
         this.name = name;
