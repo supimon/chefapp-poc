@@ -6,12 +6,12 @@ public class ChefItem {
     private String name;
     private String imgUrl;
     private String skills;
-    private int experience;
+    private Long experience;
 
     public ChefItem() {
     }
 
-    public ChefItem(String chefId, String name, String imgUrl, String skills, int experience) {
+    public ChefItem(String chefId, String name, String imgUrl, String skills, Long experience) {
         this.chefId = chefId;
         this.name = name;
         this.imgUrl = imgUrl;
@@ -51,11 +51,11 @@ public class ChefItem {
         this.skills = skills;
     }
 
-    public int getExperience() {
+    public Long getExperience() {
         return experience;
     }
 
-    public void setExperience(int experience) {
+    public void setExperience(Long experience) {
         this.experience = experience;
     }
 }
