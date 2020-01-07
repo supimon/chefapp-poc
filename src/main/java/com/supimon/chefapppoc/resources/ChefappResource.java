@@ -20,7 +20,7 @@ public class ChefappResource {
     public ChefListWrapper getChefs(@PathVariable("filterKeyword") String filterKeyword){
 
         ChefListWrapper chefListWrapper = restTemplate
-                .getForObject("http://localhost:8085/chef-listing/" + filterKeyword, ChefListWrapper.class);
+                .getForObject("http://chef-list-service/chef-listing/" + filterKeyword, ChefListWrapper.class);
 
         return chefListWrapper;
     }
@@ -29,7 +29,7 @@ public class ChefappResource {
     public ChefDetailsItem getChefDetails(@PathVariable("chefId") String chefId){
 
         ChefDetailsItem chefDetailsItem = restTemplate
-                .getForObject("http://localhost:8084/chefDetails/" + chefId, ChefDetailsItem.class);
+                .getForObject("http://chef-details-service/chefDetails/" + chefId, ChefDetailsItem.class);
 
         return chefDetailsItem;
     }
